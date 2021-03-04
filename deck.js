@@ -24,6 +24,14 @@ export default class Deck {
     return this.cards.length;
   }
 
+  //return the top card to us
+  pop() {
+    return this.cards.shift();
+  }
+  // adds a card to the bottom of the pile
+  push(card) {
+    this.cards.push(card);
+  }
   //Create a shuffle fn for deck class
   shuffle() {
     //loop through the cards to randomize
