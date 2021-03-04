@@ -27,3 +27,14 @@ class Card {
     this.value = value;
   }
 }
+
+// Create fn to allow us to create a full deck of 52 cards for each suit and value combos
+// loop through values and suits
+
+const freshDeck = () => {
+  SUITS.flatMap((suit) => {
+    VALUES.map((value) => {
+      new Card(suit, value);
+    });
+  });
+};
