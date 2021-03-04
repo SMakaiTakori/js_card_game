@@ -43,6 +43,19 @@ class Card {
     this.suit = suit;
     this.value = value;
   }
+
+  get color() {
+    return this.suit === "♠" || this.suit === "♣" ? "black" : "red";
+  }
+
+  // need to create a div to  get access to the HTML for any one of the cards
+  getHTML() {
+    const cardDiv = document.createElement("div");
+    cardDiv.innerText = this.suit;
+    cardDiv.classList.add("card", this.color);
+    cardDiv.dataset.value = `${this.value} ${this.suit}`;
+    return cardDiv;
+  }
 }
 
 // Create fn to allow us to create a full deck of 52 cards for each suit and value combos
