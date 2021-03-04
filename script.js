@@ -9,8 +9,8 @@ const text = document.querySelector(".text");
 let playerDeck, computerDeck;
 
 // start game immediately
-
-const startGame = () => {
+startGame();
+function startGame() {
   // create a new deck
   // shuffle cards so they are random
   const deck = new Deck();
@@ -23,19 +23,18 @@ const startGame = () => {
   computerDeck = new Deck(deck.cards.slice(deckMidpoint, deck.numberOfCards));
 
   cleanBeforeRound();
-};
+}
 
-startGame();
 // computerCardSlot.appendChild(deck.cards[0].getHTML());
-const cleanBeforeRound = () => {
+function cleanBeforeRound() {
   computerCardSlot.innerHTML = "";
   playerCardSlot.innerHTML = "";
   text.innerText = "";
 
   updateDeckCount();
-};
+}
 
-const updateDeckCount = () => {
+function updateDeckCount() {
   computerDeckElement.innerText = computerDeck.numberOfCards;
   playerDeckElement.innerText = playerDeck.numberOfCards;
-};
+}
