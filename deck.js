@@ -19,6 +19,23 @@ export default class Deck {
   constructor(cards = freshDeck()) {
     this.cards = cards;
   }
+
+  get numberOfCards() {
+    return this.cards.length;
+  }
+
+  //Create a shuffle fn for deck class
+  shuffle() {
+    //loop through the cards to randomize
+    for (let i = this.numberOfCards - 1; i > 0; i--) {
+      // get a random index that's before the current card we're on
+      const newIndex = Math.floor(Math.random() * (i + 1));
+      // swap the card we're currently on with the newIndex
+      const oldValue = this.cards[newIndex];
+      this.cards[newIndex] = this.cards[i];
+      this.cards[i] = oldValue;
+    }
+  }
 }
 
 class Card {
