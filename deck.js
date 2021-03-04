@@ -15,8 +15,8 @@ const VALUES = [
   "K",
 ];
 
-class Deck {
-  constructor(cards) {
+export default class Deck {
+  constructor(cards = freshDeck()) {
     this.cards = cards;
   }
 }
@@ -32,9 +32,9 @@ class Card {
 // loop through values and suits
 
 const freshDeck = () => {
-  SUITS.flatMap((suit) => {
-    VALUES.map((value) => {
-      new Card(suit, value);
+  return SUITS.flatMap((suit) => {
+    return VALUES.map((value) => {
+      return new Card(suit, value);
     });
   });
 };
