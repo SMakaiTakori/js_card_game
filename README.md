@@ -1,1 +1,1 @@
-# Simple JavaScript Card Game
+# Simple War Card Game built with JavaScript
